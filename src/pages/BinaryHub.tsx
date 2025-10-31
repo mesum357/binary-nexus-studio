@@ -1,6 +1,8 @@
 import { AppSidebar } from "@/components/AppSidebar";
 import { motion } from "framer-motion";
 import seedData from "@/data/seed.json";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const BinaryHub = () => {
   return (
@@ -44,6 +46,103 @@ const BinaryHub = () => {
               </div>
             </div>
           </div>
+
+          {/* Our Branches (Binary Hub) */}
+          <section className="py-4">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-5xl font-bold text-center mb-6 gradient-text"
+            >
+              Our Branches
+            </motion.h2>
+
+            {/* Stacked cards within content area; each card has its own image slider */}
+            <div className="flex flex-col gap-8">
+              {seedData.binaryHubBranches?.map((branch) => (
+                <motion.div
+                  key={branch.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                >
+                  <Card className="border-white/10 bg-background/60 w-full overflow-hidden">
+                    <div className="relative">
+                      <Carousel className="px-10">
+                        <CarouselContent>
+                          {branch.images.map((src: string, idx: number) => (
+                            <CarouselItem key={idx}>
+                              <div className="aspect-[16/9] md:aspect-[21/9] overflow-hidden">
+                                <img src={src} alt={branch.name} className="w-full h-full object-cover" />
+                              </div>
+                            </CarouselItem>
+                          ))}
+                        </CarouselContent>
+                        <CarouselPrevious className="border-white/20" />
+                        <CarouselNext className="border-white/20" />
+                      </Carousel>
+                    </div>
+                    <CardHeader>
+                      <CardTitle className="text-2xl">{branch.name}</CardTitle>
+                      <CardDescription className="text-sm">{branch.location}</CardDescription>
+                    </CardHeader>
+                    <CardContent className="pb-6">
+                      <p className="text-base text-foreground/80">{branch.description}</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </section>
+
+          {/* Our Impact */}
+          <section className="py-4">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-5xl font-bold text-center mb-12 gradient-text"
+            >
+              Our Impact
+            </motion.h2>
+
+            {/* Stacked impact cards; each card has its own image slider */}
+            <div className="flex flex-col gap-8">
+              {seedData.impacts?.map((imp) => (
+                <motion.div
+                  key={imp.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                >
+                  <Card className="border-white/10 bg-background/60 w-full overflow-hidden">
+                    <div className="relative">
+                      <Carousel className="px-10">
+                        <CarouselContent>
+                          {imp.images.map((src: string, idx: number) => (
+                            <CarouselItem key={idx}>
+                              <div className="aspect-[16/9] md:aspect-[21/9] overflow-hidden">
+                                <img src={src} alt={imp.title} className="w-full h-full object-cover" />
+                              </div>
+                            </CarouselItem>
+                          ))}
+                        </CarouselContent>
+                        <CarouselPrevious className="border-white/20" />
+                        <CarouselNext className="border-white/20" />
+                      </Carousel>
+                    </div>
+                    <CardHeader>
+                      <CardTitle className="text-2xl">{imp.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="pb-6">
+                      <p className="text-base text-foreground/80">{imp.description}</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </section>
         </motion.div>
       </main>
     </div>

@@ -230,42 +230,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Branches */}
-      <section className="py-20 container mx-auto px-4">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text"
-        >
-          Our Branches
-        </motion.h2>
-        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {seedData.branches.map((branch, idx) => (
-            <motion.div
-              key={branch.id}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              whileHover={{ y: -4 }}
-              className="glass-card p-6"
-            >
-              <h3 className="text-2xl font-bold mb-4 text-brand-orange">{branch.name}</h3>
-              <div className="space-y-2 text-muted">
-                <div className="flex items-start gap-2">
-                  <MapPin className="h-5 w-5 mt-1 flex-shrink-0" />
-                  <span>{branch.address}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Phone className="h-5 w-5 flex-shrink-0" />
-                  <span>{branch.phone}</span>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
 
       {/* Projects Showcase */}
       <section className="py-20 bg-gradient-soft">

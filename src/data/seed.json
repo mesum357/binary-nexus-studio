@@ -3,11 +3,79 @@
     "name": "Binary Hub",
     "motto": "Empowering with innovation.",
     "chairman": {
-      "name": "Ahmed Hassan",
-      "image": "/images/chairman.jpg",
+      "name": "Tehseen Abbas",
+      "image": "/images/tehseensir.jpg",
       "mission": "To enable freelancers and learners with practical IT skills and market access, transforming careers through cutting-edge technology education."
     }
   },
+  "binaryHubBranches": [
+    {
+      "id": "bhb-1",
+      "name": "Binary Hub Head Office",
+      "location": "Jutial, Gilgit",
+      "description": "Headquarters overseeing operations, training programs, and community initiatives.",
+      "images": ["/images/branch-karachi.jpg", "/placeholder.svg"]
+    },
+    {
+      "id": "bhb-2",
+      "name": "Binary Hub Vocational Center",
+      "location": "Jutial, Gilgit",
+      "description": "Hands-on vocational training center focused on employable skills.",
+      "images": ["/images/branch-karachi.jpg", "/placeholder.svg"]
+    },
+    {
+      "id": "bhb-3",
+      "name": "Binary Hub Incubation Center",
+      "location": "Jutial, Gilgit",
+      "description": "Incubation space to mentor startups and enable innovation.",
+      "images": ["/images/branch-karachi.jpg", "/placeholder.svg"]
+    },
+    {
+      "id": "bhb-4",
+      "name": "Binary Hub YRC (Youth Resource Center)",
+      "location": "Public Chowk, Jutial Gilgit",
+      "description": "Youth engagement hub providing resources, guidance, and events.",
+      "images": ["/images/branch-karachi.jpg", "/placeholder.svg"]
+    }
+  ],
+  "impacts": [
+    {
+      "id": "imp-1",
+      "title": "Women Empowerment",
+      "description": "Programs to empower women through skills training and entrepreneurship.",
+      "images": ["/images/testi1.jpg", "/placeholder.svg"]
+    },
+    {
+      "id": "imp-2",
+      "title": "Youth Empowerment with Digital Skills",
+      "description": "Equipping youth with market-ready digital skills and mentorship.",
+      "images": ["/images/testi2.jpg", "/placeholder.svg"]
+    },
+    {
+      "id": "imp-3",
+      "title": "Vocational Training",
+      "description": "Practical, job-focused training across multiple disciplines.",
+      "images": ["/images/project-ecom.jpg", "/placeholder.svg"]
+    },
+    {
+      "id": "imp-4",
+      "title": "Child Protection",
+      "description": "Initiatives for safeguarding children and raising awareness.",
+      "images": ["/images/testi3.jpg", "/placeholder.svg"]
+    },
+    {
+      "id": "imp-5",
+      "title": "Youth Engagement in Digital Platforms",
+      "description": "Creating constructive avenues for youth participation online.",
+      "images": ["/images/mentor-ali.jpg", "/placeholder.svg"]
+    },
+    {
+      "id": "imp-6",
+      "title": "Tourism Promotion in GB",
+      "description": "Promoting Gilgit-Baltistan's culture and landscapes through digital storytelling and campaigns.",
+      "images": ["/images/project-agency.jpg", "/placeholder.svg"]
+    }
+  ],
   "branches": [
     {
       "id": "bhn-1",
