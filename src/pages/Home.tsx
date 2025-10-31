@@ -29,8 +29,7 @@ const Home = () => {
       <header className="sticky top-0 z-50 bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-white/10">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <a href="/" className="flex items-center gap-2">
-            <img src="/favicon.ico" alt="Logo" className="h-8 w-8 rounded" />
-            <span className="font-semibold">Binary Nexus</span>
+            <img src="/logo.png" alt="Logo" className="h-8 w-auto" />
           </a>
           <nav className="flex items-center gap-2 md:gap-3">
             <NavLink
@@ -142,12 +141,20 @@ const Home = () => {
                 <img src="/images/clients/gbpolice.png" alt="GB Police" className="h-14 md:h-16 opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 ease-out hover:scale-105" />
                 <img src="/images/clients/gbrsp.png" alt="GB RSP" className="h-14 md:h-16 opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 ease-out hover:scale-105" />
                 <img src="/images/clients/vfo.png" alt="VFO" className="h-14 md:h-16 opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 ease-out hover:scale-105" />
+                <img src="/images/clients/pseb.jpg" alt="PSEB" className="h-14 md:h-16 opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 ease-out hover:scale-105" />
+                <img src="/images/clients/technation.png" alt="TechNation" className="h-14 md:h-16 opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 ease-out hover:scale-105" />
+                <img src="/images/clients/navttc.png" alt="NAVTTC" className="h-14 md:h-16 opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 ease-out hover:scale-105" />
+                <img src="/images/clients/yri.jpg" alt="YRI" className="h-14 md:h-16 opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 ease-out hover:scale-105" />
                 {/* duplicate for seamless loop */}
                 <img src="/images/clients/sco.jpg" alt="SCO" className="h-14 md:h-16 opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 ease-out hover:scale-105" />
                 <img src="/images/clients/gbgov.png" alt="GB Government" className="h-14 md:h-16 opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 ease-out hover:scale-105" />
                 <img src="/images/clients/gbpolice.png" alt="GB Police" className="h-14 md:h-16 opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 ease-out hover:scale-105" />
                 <img src="/images/clients/gbrsp.png" alt="GB RSP" className="h-14 md:h-16 opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 ease-out hover:scale-105" />
                 <img src="/images/clients/vfo.png" alt="VFO" className="h-14 md:h-16 opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 ease-out hover:scale-105" />
+                <img src="/images/clients/pseb.jpg" alt="PSEB" className="h-14 md:h-16 opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 ease-out hover:scale-105" />
+                <img src="/images/clients/technation.png" alt="TechNation" className="h-14 md:h-16 opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 ease-out hover:scale-105" />
+                <img src="/images/clients/navttc.png" alt="NAVTTC" className="h-14 md:h-16 opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 ease-out hover:scale-105" />
+                <img src="/images/clients/yri.jpg" alt="YRI" className="h-14 md:h-16 opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 ease-out hover:scale-105" />
               </div>
             </div>
 
