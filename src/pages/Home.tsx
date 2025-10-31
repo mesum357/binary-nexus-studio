@@ -5,12 +5,13 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "react-router-dom";
-import { Moon, Sun } from "lucide-react";
+import { Moon, Sun, Menu, X } from "lucide-react";
 import { MapPin, Phone } from "lucide-react";
 import seedData from "@/data/seed.json";
 
 const Home = () => {
   const [isDark, setIsDark] = useState<boolean>(false);
+  const [mobileOpen, setMobileOpen] = useState<boolean>(false);
 
   useEffect(() => {
     const current = document.documentElement.classList.contains("dark");
@@ -31,7 +32,8 @@ const Home = () => {
           <a href="/" className="flex items-center gap-2">
             <img src="/logo.png" alt="Logo" className="h-8 w-auto" />
           </a>
-          <nav className="flex items-center gap-2 md:gap-3">
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-2 md:gap-3">
             <NavLink
               to="/binary-hub"
               className={({ isActive }) =>
@@ -73,7 +75,71 @@ const Home = () => {
               <span className="sr-only">Toggle theme</span>
             </Button>
           </nav>
+          {/* Mobile controls */}
+          <div className="flex md:hidden items-center gap-2">
+            <Button onClick={toggleTheme} variant="outline" size="icon" className="rounded-xl border-white/20 w-9 h-9" aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"} title={isDark ? "Switch to light mode" : "Switch to dark mode"}>
+              {isDark ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
+              <span className="sr-only">Toggle theme</span>
+            </Button>
+            <Button
+              variant="outline"
+              size="icon"
+              className="rounded-xl border-white/20 w-9 h-9"
+              onClick={() => setMobileOpen((v) => !v)}
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-nav"
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            >
+              {mobileOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+            </Button>
+          </div>
         </div>
+        {/* Mobile menu */}
+        {mobileOpen && (
+          <div id="mobile-nav" className="md:hidden border-t border-white/10 bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+            <div className="container mx-auto px-4 py-3 flex flex-col gap-2">
+              <NavLink
+                to="/binary-hub"
+                onClick={() => setMobileOpen(false)}
+                className={({ isActive }) =>
+                  `px-3 py-2 rounded-lg transition-colors ${
+                    isActive
+                      ? "bg-black/15 dark:bg-white/15 text-foreground"
+                      : "bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 hover:text-foreground/90"
+                  }`
+                }
+              >
+                Binary Hub
+              </NavLink>
+              <NavLink
+                to="/digital-services/courses"
+                onClick={() => setMobileOpen(false)}
+                className={({ isActive }) =>
+                  `px-3 py-2 rounded-lg transition-colors ${
+                    isActive
+                      ? "bg-black/15 dark:bg-white/15 text-foreground"
+                      : "bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 hover:text-foreground/90"
+                  }`
+                }
+              >
+                Binary Digital Services
+              </NavLink>
+              <NavLink
+                to="/consultancy"
+                onClick={() => setMobileOpen(false)}
+                className={({ isActive }) =>
+                  `px-3 py-2 rounded-lg transition-colors ${
+                    isActive
+                      ? "bg-black/15 dark:bg-white/15 text-foreground"
+                      : "bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 hover:text-foreground/90"
+                  }`
+                }
+              >
+                Consultancy
+              </NavLink>
+            </div>
+          </div>
+        )}
       </header>
 
       <Hero />
