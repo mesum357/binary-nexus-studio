@@ -1,8 +1,8 @@
-import { Home, Users, ImageIcon, BookOpen, Briefcase, GraduationCap } from "lucide-react";
+import { Home, Users, ImageIcon, BookOpen, Briefcase, GraduationCap, ArrowLeft } from "lucide-react";
 import { NavLink, useLocation } from "react-router-dom";
 
 interface AppSidebarProps {
-  type: "binary-hub" | "digital-services";
+  type: "binary-hub" | "digital-services" | "consultancy";
 }
 
 const binaryHubLinks = [
@@ -19,10 +19,26 @@ const digitalServicesLinks = [
 
 export function AppSidebar({ type }: AppSidebarProps) {
   const location = useLocation();
-  const links = type === "binary-hub" ? binaryHubLinks : digitalServicesLinks;
+  const links = type === "binary-hub" ? binaryHubLinks : type === "digital-services" ? digitalServicesLinks : [];
 
   return (
-    <aside className="w-64 min-h-screen glass-card border-r border-white/10 p-6">
+    <aside className="w-64 h-screen sticky top-0 z-20 glass-card border-r border-white/10 p-6 flex flex-col overflow-y-auto">
+      <div className="mb-4">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            `flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${
+              isActive
+                ? "bg-gradient-primary text-white shadow-glow"
+                : "text-muted hover:bg-white/5 hover:text-foreground"
+            }`
+          }
+        >
+          <ArrowLeft className="h-5 w-5" />
+          <span className="font-medium">Back to Home</span>
+        </NavLink>
+      </div>
+
       <nav className="space-y-2">
         {links.map((link) => {
           const Icon = link.icon;

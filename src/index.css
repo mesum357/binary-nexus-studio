@@ -17,7 +17,49 @@ All colors MUST be HSL.
     --brand-blue-hover: 203 100% 22%;
     --brand-blue-light: 203 80% 60%;
 
-    /* Base colors */
+    /* Base colors - Light theme */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 20 79% 54%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 203 100% 30%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Text-muted color for light theme */
+    --muted: 215 16% 35%;
+    --muted-foreground: 215 16% 35%;
+
+    --accent: 20 79% 54%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 7% / 0.1;
+    --input: 0 0% 7% / 0.1;
+    --ring: 20 79% 54%;
+
+    --radius: 1.5rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(20 79% 54%) 0%, hsl(203 100% 30%) 100%);
+    --gradient-soft: linear-gradient(135deg, hsl(20 79% 54% / 0.12) 0%, hsl(203 100% 30% / 0.12) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 10px 30px hsl(220 10% 20% / 0.12);
+    --shadow-glow: 0 0 40px hsl(20 79% 54% / 0.3);
+  }
+
+  .dark {
+    /* Base colors - Dark theme */
     --background: 216 28% 7%;
     --foreground: 0 0% 100%;
 
@@ -69,6 +111,36 @@ All colors MUST be HSL.
 
   .frosted {
     @apply backdrop-blur-2xl bg-white/[0.08];
+  }
+
+  /* Left-to-right marquee utility */
+  @keyframes marquee-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes marquee-right {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
+  .marquee {
+    position: relative;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+  .marquee-track {
+    will-change: transform;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+  }
+  .marquee-track-ltr { animation: marquee-left 40s linear infinite; }
+  .marquee-track-rtl { animation: marquee-right 50s linear infinite; }
+  .marquee:hover .marquee-track-ltr,
+  .marquee:hover .marquee-track-rtl { animation-play-state: paused; }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track-ltr,
+    .marquee-track-rtl { animation: none; }
   }
 }
 

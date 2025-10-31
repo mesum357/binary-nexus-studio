@@ -2,12 +2,81 @@ import { Hero } from "@/components/Hero";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { NavLink } from "react-router-dom";
+import { Moon, Sun } from "lucide-react";
 import { MapPin, Phone } from "lucide-react";
 import seedData from "@/data/seed.json";
 
 const Home = () => {
+  const [isDark, setIsDark] = useState<boolean>(false);
+
+  useEffect(() => {
+    const current = document.documentElement.classList.contains("dark");
+    setIsDark(current);
+  }, []);
+
+  const toggleTheme = () => {
+    const next = !isDark;
+    document.documentElement.classList.toggle("dark", next);
+    localStorage.setItem("theme", next ? "dark" : "light");
+    setIsDark(next);
+  };
   return (
     <div className="min-h-screen">
+      {/* Navbar */}
+      <header className="sticky top-0 z-50 bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-white/10">
+        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+          <a href="/" className="flex items-center gap-2">
+            <img src="/favicon.ico" alt="Logo" className="h-8 w-8 rounded" />
+            <span className="font-semibold">Binary Nexus</span>
+          </a>
+          <nav className="flex items-center gap-2 md:gap-3">
+            <NavLink
+              to="/binary-hub"
+              className={({ isActive }) =>
+                `text-sm md:text-base px-3 py-1 rounded-lg transition-colors ${
+                  isActive
+                    ? "bg-black/15 dark:bg-white/15 text-foreground"
+                    : "bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 hover:text-foreground/90"
+                }`
+              }
+            >
+              Binary Hub
+            </NavLink>
+            <NavLink
+              to="/digital-services/courses"
+              className={({ isActive }) =>
+                `text-sm md:text-base px-3 py-1 rounded-lg transition-colors ${
+                  isActive
+                    ? "bg-black/15 dark:bg-white/15 text-foreground"
+                    : "bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 hover:text-foreground/90"
+                }`
+              }
+            >
+              Binary Digital Services
+            </NavLink>
+            <NavLink
+              to="/consultancy"
+              className={({ isActive }) =>
+                `text-sm md:text-base px-3 py-1 rounded-lg transition-colors ${
+                  isActive
+                    ? "bg-black/15 dark:bg-white/15 text-foreground"
+                    : "bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 hover:text-foreground/90"
+                }`
+              }
+            >
+              Consultancy
+            </NavLink>
+            <Button onClick={toggleTheme} variant="outline" size="icon" className="rounded-xl border-white/20 w-9 h-9" aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"} title={isDark ? "Switch to light mode" : "Switch to dark mode"}>
+              {isDark ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
+              <span className="sr-only">Toggle theme</span>
+            </Button>
+          </nav>
+        </div>
+      </header>
+
       <Hero />
 
       {/* Chairman Section */}
@@ -49,8 +118,8 @@ const Home = () => {
         </motion.div>
       </section>
 
-      {/* Achievements */}
-      <section className="py-20 bg-gradient-soft">
+      {/* Clients & Achievements */}
+      <section className="py-20 bg-white dark:bg-white">
         <div className="container mx-auto px-4">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -58,21 +127,33 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text"
           >
-            Our Impact
+            Our Clients
           </motion.h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {seedData.achievements.map((achievement, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-              >
-                <AnimatedCounter value={achievement.value} label={achievement.label} />
-              </motion.div>
-            ))}
+          <div className="relative py-6 mb-12">
+            {/* Edge fades for nicer flow */}
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent" />
+
+            {/* Row 1 - left to right */}
+            <div className="marquee">
+              <div className="marquee-track marquee-track-ltr">
+                <img src="/images/clients/sco.jpg" alt="SCO" className="h-14 md:h-16 opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 ease-out hover:scale-105" />
+                <img src="/images/clients/gbgov.png" alt="GB Government" className="h-14 md:h-16 opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 ease-out hover:scale-105" />
+                <img src="/images/clients/gbpolice.png" alt="GB Police" className="h-14 md:h-16 opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 ease-out hover:scale-105" />
+                <img src="/images/clients/gbrsp.png" alt="GB RSP" className="h-14 md:h-16 opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 ease-out hover:scale-105" />
+                <img src="/images/clients/vfo.png" alt="VFO" className="h-14 md:h-16 opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 ease-out hover:scale-105" />
+                {/* duplicate for seamless loop */}
+                <img src="/images/clients/sco.jpg" alt="SCO" className="h-14 md:h-16 opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 ease-out hover:scale-105" />
+                <img src="/images/clients/gbgov.png" alt="GB Government" className="h-14 md:h-16 opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 ease-out hover:scale-105" />
+                <img src="/images/clients/gbpolice.png" alt="GB Police" className="h-14 md:h-16 opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 ease-out hover:scale-105" />
+                <img src="/images/clients/gbrsp.png" alt="GB RSP" className="h-14 md:h-16 opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 ease-out hover:scale-105" />
+                <img src="/images/clients/vfo.png" alt="VFO" className="h-14 md:h-16 opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 ease-out hover:scale-105" />
+              </div>
+            </div>
+
+            {/* Single continuous row only (second row removed) */}
           </div>
+          {/* Removed achievements counters as requested */}
         </div>
       </section>
 

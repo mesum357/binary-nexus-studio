@@ -33,7 +33,7 @@ export const Hero = () => {
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.6, type: "spring" }}
-            className="glass-card p-12 md:p-16 shadow-soft-ios"
+            className="p-0"
           >
             <h1 className="text-5xl md:text-7xl font-bold mb-6 gradient-text">
               Binary Hub
@@ -69,7 +69,7 @@ export const Hero = () => {
                   onClick={() => navigate("/consultancy")}
                   size="lg"
                   variant="outline"
-                  className="w-full sm:w-auto border-2 border-white/20 hover:bg-white/10 text-white px-8 py-6 text-lg rounded-2xl transition-all"
+                  className="w-full sm:w-auto bg-black hover:bg-black text-white px-8 py-6 text-lg rounded-2xl transition-all dark:bg-transparent dark:hover:bg-white/10 dark:border-2 dark:border-white/20"
                 >
                   Consultancy
                 </Button>
