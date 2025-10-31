@@ -1,0 +1,300 @@
+{
+  "company": {
+    "name": "Binary Hub",
+    "motto": "Empowering with innovation.",
+    "chairman": {
+      "name": "Ahmed Hassan",
+      "image": "/images/chairman.jpg",
+      "mission": "To enable freelancers and learners with practical IT skills and market access, transforming careers through cutting-edge technology education."
+    }
+  },
+  "branches": [
+    {
+      "id": "bhn-1",
+      "name": "Karachi",
+      "address": "Plot 47, Clifton Block 2, Karachi, Pakistan",
+      "phone": "+92-21-3586-2100"
+    },
+    {
+      "id": "bhn-2",
+      "name": "Lahore",
+      "address": "Gulberg III, Main Boulevard, Lahore, Pakistan",
+      "phone": "+92-42-3587-4200"
+    },
+    {
+      "id": "bhn-3",
+      "name": "Islamabad",
+      "address": "F-7 Markaz, Blue Area, Islamabad, Pakistan",
+      "phone": "+92-51-2277-900"
+    }
+  ],
+  "achievements": [
+    { "label": "Students Trained", "value": 1200 },
+    { "label": "Projects Completed", "value": 450 },
+    { "label": "Freelancers Placed", "value": 320 }
+  ],
+  "projects": [
+    {
+      "id": "p1",
+      "title": "E-commerce Platform",
+      "image": "/images/project-ecom.jpg",
+      "summary": "Fullstack e-commerce solution for a leading local retailer with inventory management"
+    },
+    {
+      "id": "p2",
+      "title": "Creative Agency Website",
+      "image": "/images/project-agency.jpg",
+      "summary": "Complete branding, UI/UX design, and web development for a creative agency"
+    },
+    {
+      "id": "p3",
+      "title": "Healthcare Portal",
+      "image": "/images/project-health.jpg",
+      "summary": "Patient management system with appointment booking and telemedicine features"
+    },
+    {
+      "id": "p4",
+      "title": "Educational App",
+      "image": "/images/project-edu.jpg",
+      "summary": "Interactive learning platform with progress tracking and gamification"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "t1",
+      "name": "Sana Ahmed",
+      "role": "Web Development Graduate",
+      "text": "Binary Hub's web development course transformed my career. Within 3 months of completion, I was freelancing full-time with international clients.",
+      "image": "/images/testi1.jpg"
+    },
+    {
+      "id": "t2",
+      "name": "Omar Farooq",
+      "role": "Business Owner",
+      "text": "The team delivered exceptional quality. Our new platform exceeded expectations and was delivered ahead of schedule.",
+      "image": "/images/testi2.jpg"
+    },
+    {
+      "id": "t3",
+      "name": "Ayesha Khan",
+      "role": "UI/UX Design Student",
+      "text": "The mentors at Binary Hub are industry experts who genuinely care about student success. Best investment I've made in my career.",
+      "image": "/images/testi3.jpg"
+    }
+  ],
+  "courses": [
+    {
+      "slug": "web-development",
+      "title": "Web Development",
+      "duration": "12 weeks",
+      "price": "PKR 25,000",
+      "summary": "Master HTML, CSS, JavaScript, React, and Node.js. Build real-world projects and deploy production apps.",
+      "image": "/images/course-web.jpg"
+    },
+    {
+      "slug": "ui-ux-design",
+      "title": "UI/UX Designing",
+      "duration": "8 weeks",
+      "price": "PKR 15,000",
+      "summary": "Learn Figma, prototyping, UX research, and design thinking. Create stunning user experiences.",
+      "image": "/images/course-uiux.jpg"
+    },
+    {
+      "slug": "graphic-design",
+      "title": "Graphic Designing",
+      "duration": "10 weeks",
+      "price": "PKR 18,000",
+      "summary": "Adobe Creative Suite mastery: Photoshop, Illustrator, InDesign. Build a professional portfolio.",
+      "image": "/images/course-graphic.jpg"
+    },
+    {
+      "slug": "digital-marketing",
+      "title": "Digital Marketing",
+      "duration": "8 weeks",
+      "price": "PKR 20,000",
+      "summary": "SEO, SEM, social media marketing, content strategy, and analytics. Drive business growth online.",
+      "image": "/images/course-marketing.jpg"
+    },
+    {
+      "slug": "bookkeeping",
+      "title": "Bookkeeping",
+      "duration": "6 weeks",
+      "price": "PKR 12,000",
+      "summary": "QuickBooks, accounting principles, financial reporting. Perfect for freelancers and small businesses.",
+      "image": "/images/course-bookkeeping.jpg"
+    },
+    {
+      "slug": "amazon",
+      "title": "Amazon FBA",
+      "duration": "8 weeks",
+      "price": "PKR 22,000",
+      "summary": "Product research, sourcing, listing optimization, PPC campaigns. Launch your Amazon business.",
+      "image": "/images/course-amazon.jpg"
+    }
+  ],
+  "mentors": [
+    {
+      "id": "m1",
+      "name": "Ali Khan",
+      "title": "Senior Web Developer",
+      "department": "Web Development",
+      "image": "/images/mentor-ali.jpg",
+      "linkedin": "https://linkedin.com/in/alikhan"
+    },
+    {
+      "id": "m2",
+      "name": "Sara Aziz",
+      "title": "UX Lead Designer",
+      "department": "UI/UX Designing",
+      "image": "/images/mentor-sara.jpg",
+      "linkedin": "https://linkedin.com/in/saraaziz"
+    },
+    {
+      "id": "m3",
+      "name": "Bilal Sheikh",
+      "title": "Creative Director",
+      "department": "Graphic Designing",
+      "image": "/images/mentor-bilal.jpg",
+      "linkedin": "https://linkedin.com/in/bilalsheikh"
+    },
+    {
+      "id": "m4",
+      "name": "Fatima Malik",
+      "title": "Digital Marketing Strategist",
+      "department": "Digital Marketing",
+      "image": "/images/mentor-fatima.jpg",
+      "linkedin": "https://linkedin.com/in/fatimamalik"
+    }
+  ],
+  "services": [
+    {
+      "category": "Web Development",
+      "freelancers": [
+        {
+          "name": "Faisal Raza",
+          "profile": "https://portfolio.example/faisal",
+          "skills": ["React", "Next.js", "Node.js", "MongoDB"]
+        },
+        {
+          "name": "Hira Tanveer",
+          "profile": "https://portfolio.example/hira",
+          "skills": ["Vue.js", "Laravel", "MySQL", "AWS"]
+        }
+      ]
+    },
+    {
+      "category": "Graphic Designing",
+      "freelancers": [
+        {
+          "name": "Mubeen Ahmed",
+          "profile": "https://portfolio.example/mubeen",
+          "skills": ["Photoshop", "Illustrator", "Branding", "Print Design"]
+        },
+        {
+          "name": "Zainab Ali",
+          "profile": "https://portfolio.example/zainab",
+          "skills": ["InDesign", "After Effects", "Motion Graphics"]
+        }
+      ]
+    },
+    {
+      "category": "UI/UX Design",
+      "freelancers": [
+        {
+          "name": "Hassan Malik",
+          "profile": "https://portfolio.example/hassan",
+          "skills": ["Figma", "Adobe XD", "User Research", "Prototyping"]
+        }
+      ]
+    },
+    {
+      "category": "Digital Marketing",
+      "freelancers": [
+        {
+          "name": "Amna Shahid",
+          "profile": "https://portfolio.example/amna",
+          "skills": ["SEO", "Google Ads", "Facebook Ads", "Analytics"]
+        }
+      ]
+    }
+  ],
+  "gallery": [
+    {
+      "id": "g1",
+      "category": "Branches",
+      "image": "/images/branch-karachi.jpg",
+      "alt": "Karachi Branch - Modern training facility"
+    },
+    {
+      "id": "g2",
+      "category": "Branches",
+      "image": "/images/branch-lahore.jpg",
+      "alt": "Lahore Branch - Collaborative learning space"
+    },
+    {
+      "id": "g3",
+      "category": "Projects",
+      "image": "/images/project-ecom.jpg",
+      "alt": "E-commerce Platform - Dashboard view"
+    },
+    {
+      "id": "g4",
+      "category": "Projects",
+      "image": "/images/project-agency.jpg",
+      "alt": "Creative Agency Website - Hero section"
+    },
+    {
+      "id": "g5",
+      "category": "Events",
+      "image": "/images/event-hackathon.jpg",
+      "alt": "Annual Hackathon 2024"
+    },
+    {
+      "id": "g6",
+      "category": "Events",
+      "image": "/images/event-workshop.jpg",
+      "alt": "UI/UX Design Workshop"
+    },
+    {
+      "id": "g7",
+      "category": "Team",
+      "image": "/images/team-photo.jpg",
+      "alt": "Binary Hub Team 2024"
+    },
+    {
+      "id": "g8",
+      "category": "Courses",
+      "image": "/images/class-session.jpg",
+      "alt": "Live coding session - Web Development"
+    }
+  ],
+  "internships": {
+    "currentOpenings": 0,
+    "programs": [
+      {
+        "id": "i1",
+        "title": "Frontend Development Intern",
+        "duration": "3 months",
+        "stipend": "Unpaid",
+        "criteria": [
+          "Basic knowledge of HTML, CSS, and JavaScript",
+          "Interest in React and modern web frameworks",
+          "CS/IT student or recent graduate"
+        ],
+        "applyLink": "/digital-services/internships/apply"
+      },
+      {
+        "id": "i2",
+        "title": "UI/UX Design Intern",
+        "duration": "3 months",
+        "stipend": "Unpaid",
+        "criteria": [
+          "Familiarity with Figma or Adobe XD",
+          "Portfolio of design projects (academic or personal)",
+          "Strong attention to detail"
+        ],
+        "applyLink": "/digital-services/internships/apply"
+      }
+    ]
+  }
+}
