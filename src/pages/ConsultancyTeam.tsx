@@ -48,9 +48,9 @@ const ConsultancyTeam = () => {
     },
     {
       name: "Dr. Shah Abbas",
-      title: "Economist",
-      description: "Dr. Shah Abbas is a highly accomplished economist with an advanced academic pedigree from China's esteemed China University of Geosciences in Wuhan, where he earned both his PhD and completed a Postdoctoral fellowship in Economics at the School of Economics and Management. His deep, specialized training is complemented by a prolific research career, evidenced by a consistent record of publications in high-impact national and international journals. Dr. Abbas has further demonstrated his expertise and leadership by successfully securing and executing a portfolio of research-funded projects for a diverse range of national and international organizations. This powerful combination of rigorous academic training, scholarly output, and proven project management makes him a leading authority in his field, capable of delivering innovative and impactful economic solutions.",
-      image: "/images/consultancy/shahabbas.jpg"
+      title: "Data Scientist",
+      description: "Dr. Shah Abbas is a data scientist and policy analyst with a PhD in Economics from the School of Economics, Zhongnan University of Economics and Law, Wuhan, China. He has over five years of national and international experience in data handling, quantitative research, and policy analysis. Dr. Abbas completed his postdoctoral research from the School of Economics and Management, China University of Geosciences, Wuhan, China, where he further honed his expertise in data modeling, econometrics, and applied economic analysis. Dr. Abbas specializes in leveraging data to inform public policy, particularly in the areas of economic development, environmental economics, climate change, and technological innovation. He has successfully secured and managed several high-profile research projects, including the National Social Sciences Foundation and the National Natural Science Foundation of China Projects.",
+      image: "/images/consultancy/shahabbas2.jpg"
     }
   ];
 
