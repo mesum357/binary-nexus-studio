@@ -62,7 +62,32 @@ This project is built with:
 
 ## How can I deploy this project?
 
+### Option 1: Render (Recommended)
+
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions on Render.
+
+**Quick Steps:**
+1. Go to [Render Dashboard](https://dashboard.render.com)
+2. Create a new Static Site
+3. Connect your repository
+4. Set build command: `npm install && npm run build`
+5. Set publish directory: `dist`
+6. Add environment variable: `VITE_API_URL` = your backend API URL
+
+### Option 2: Lovable
+
 Simply open [Lovable](https://lovable.dev/projects/e142e5a6-73a4-43f6-9f9f-039494bfd695) and click on Share -> Publish.
+
+## Environment Variables
+
+The frontend requires the following environment variable:
+
+- `VITE_API_URL`: Backend API URL (default: `http://localhost:5000`)
+
+For production, set this to your deployed backend URL:
+```
+VITE_API_URL=https://your-backend-url.onrender.com
+```
 
 ## Can I connect a custom domain to my Lovable project?
 

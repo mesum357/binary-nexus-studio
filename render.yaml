@@ -1,0 +1,13 @@
+# Render Blueprint Configuration for Frontend
+# This file is optional - you can also configure via Render Dashboard
+
+services:
+  - type: web
+    name: binary-nexus-frontend
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: VITE_API_URL
+        sync: false
+
