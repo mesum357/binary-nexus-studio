@@ -15,11 +15,24 @@ const digitalServicesLinks = [
   { title: "Our Courses", url: "/digital-services/courses", icon: BookOpen },
   { title: "Our Services", url: "/digital-services/services", icon: Briefcase },
   { title: "Internships", url: "/digital-services/internships", icon: GraduationCap },
+  { title: "Our Team", url: "/digital-services/team", icon: Users },
+];
+
+const consultancyLinks = [
+  { title: "Home", url: "/consultancy", icon: Home },
+  { title: "Our Services", url: "/consultancy/services", icon: Briefcase },
+  { title: "Our Team", url: "/consultancy/team", icon: Users },
 ];
 
 export function AppSidebar({ type }: AppSidebarProps) {
   const location = useLocation();
-  const links = type === "binary-hub" ? binaryHubLinks : type === "digital-services" ? digitalServicesLinks : [];
+  const links = type === "binary-hub" 
+    ? binaryHubLinks 
+    : type === "digital-services" 
+    ? digitalServicesLinks 
+    : type === "consultancy"
+    ? consultancyLinks
+    : [];
 
   return (
     <aside className="w-64 h-screen sticky top-0 z-20 glass-card border-r border-white/10 p-6 flex flex-col overflow-y-auto">

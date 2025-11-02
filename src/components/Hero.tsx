@@ -35,12 +35,13 @@ export const Hero = () => {
             transition={{ delay: 0.2, duration: 0.6, type: "spring" }}
             className="p-0"
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 gradient-text">
-              Binary Hub
-            </h1>
-            <p className="text-2xl md:text-3xl text-foreground/90 mb-12 font-light">
-              Empowering with innovation.
-            </p>
+            <div className="flex items-center justify-center mb-6">
+              <img 
+                src="/logo.png" 
+                alt="Binary Hub" 
+                className="h-48 md:h-64 w-auto"
+              />
+            </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

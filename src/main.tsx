@@ -1,11 +1,15 @@
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
+import { AuthProvider } from "./contexts/AuthContext.tsx";
 
-// Initialize theme before app mounts
+// Initialize theme before app mounts - default to dark mode
 const storedTheme = localStorage.getItem("theme");
-const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-const isDark = storedTheme ? storedTheme === "dark" : prefersDark;
+const isDark = storedTheme ? storedTheme === "dark" : true; // Default to dark mode if no preference
 document.documentElement.classList.toggle("dark", isDark);
 
-createRoot(document.getElementById("root")!).render(<App />);
+createRoot(document.getElementById("root")!).render(
+  <AuthProvider>
+    <App />
+  </AuthProvider>
+);

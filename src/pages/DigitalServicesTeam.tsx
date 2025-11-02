@@ -14,7 +14,7 @@ interface TeamMember {
   team: string;
 }
 
-const BinaryHubTeam = () => {
+const DigitalServicesTeam = () => {
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -25,7 +25,7 @@ const BinaryHubTeam = () => {
   const fetchTeamMembers = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`${API_URL}/api/team-members?team=binary-hub`);
+      const response = await fetch(`${API_URL}/api/team-members?team=binary-digital`);
       
       if (response.ok) {
         const data = await response.json();
@@ -42,7 +42,7 @@ const BinaryHubTeam = () => {
 
   return (
     <div className="min-h-screen flex w-full">
-      <AppSidebar type="binary-hub" />
+      <AppSidebar type="digital-services" />
       
       <main className="flex-1 p-8 md:p-12">
         <motion.div
@@ -52,7 +52,7 @@ const BinaryHubTeam = () => {
         >
           <h1 className="text-5xl font-bold mb-4 gradient-text">Our Team</h1>
           <p className="text-xl text-muted mb-12">
-            Meet the talented team members who make Binary Hub great
+            Meet the talented team members who drive Binary Digital Service
           </p>
           
           {loading ? (
@@ -87,4 +87,5 @@ const BinaryHubTeam = () => {
   );
 };
 
-export default BinaryHubTeam;
+export default DigitalServicesTeam;
+

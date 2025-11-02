@@ -25,7 +25,9 @@ export const MentorCard = ({ name, title, department, image, linkedin }: MentorC
       </div>
       
       <h3 className="text-xl font-bold mb-1">{name}</h3>
-      <p className="text-brand-orange font-medium mb-1">{title}</p>
+      {title && title !== department && (
+        <p className="text-brand-orange font-medium mb-1">{title}</p>
+      )}
       <p className="text-sm text-muted mb-4">{department}</p>
       
       <Button

@@ -154,48 +154,48 @@
     {
       "slug": "web-development",
       "title": "Web Development",
-      "duration": "12 weeks",
-      "price": "PKR 25,000",
+      "duration": "3 months",
+      "price": "PKR 5,000",
       "summary": "Master HTML, CSS, JavaScript, React, and Node.js. Build real-world projects and deploy production apps.",
       "image": "/images/course-web.jpg"
     },
     {
       "slug": "ui-ux-design",
       "title": "UI/UX Designing",
-      "duration": "8 weeks",
-      "price": "PKR 15,000",
+      "duration": "3 months",
+      "price": "PKR 5,000",
       "summary": "Learn Figma, prototyping, UX research, and design thinking. Create stunning user experiences.",
       "image": "/images/course-uiux.jpg"
     },
     {
       "slug": "graphic-design",
       "title": "Graphic Designing",
-      "duration": "10 weeks",
-      "price": "PKR 18,000",
+      "duration": "3 months",
+      "price": "PKR 5,000",
       "summary": "Adobe Creative Suite mastery: Photoshop, Illustrator, InDesign. Build a professional portfolio.",
       "image": "/images/course-graphic.jpg"
     },
     {
       "slug": "digital-marketing",
       "title": "Digital Marketing",
-      "duration": "8 weeks",
-      "price": "PKR 20,000",
+      "duration": "3 months",
+      "price": "PKR 5,000",
       "summary": "SEO, SEM, social media marketing, content strategy, and analytics. Drive business growth online.",
       "image": "/images/course-marketing.jpg"
     },
     {
       "slug": "bookkeeping",
       "title": "Bookkeeping",
-      "duration": "6 weeks",
-      "price": "PKR 12,000",
+      "duration": "3 months",
+      "price": "PKR 5,000",
       "summary": "QuickBooks, accounting principles, financial reporting. Perfect for freelancers and small businesses.",
       "image": "/images/course-bookkeeping.jpg"
     },
     {
       "slug": "amazon",
       "title": "Amazon FBA",
-      "duration": "8 weeks",
-      "price": "PKR 22,000",
+      "duration": "3 months",
+      "price": "PKR 5,000",
       "summary": "Product research, sourcing, listing optimization, PPC campaigns. Launch your Amazon business.",
       "image": "/images/course-amazon.jpg"
     }

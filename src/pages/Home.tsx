@@ -5,13 +5,26 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "react-router-dom";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Moon, Sun, Menu, X, User, LogOut, BookOpen } from "lucide-react";
 import { MapPin, Phone } from "lucide-react";
 import seedData from "@/data/seed.json";
+import { useAuth } from "@/contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+  DropdownMenuSeparator,
+} from "@/components/ui/dropdown-menu";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { NotificationDropdown } from "@/components/NotificationDropdown";
 
 const Home = () => {
   const [isDark, setIsDark] = useState<boolean>(false);
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
+  const { user, signOut } = useAuth();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const current = document.documentElement.classList.contains("dark");
@@ -24,6 +37,16 @@ const Home = () => {
     localStorage.setItem("theme", next ? "dark" : "light");
     setIsDark(next);
   };
+
+  const handleSignOut = async () => {
+    try {
+      await signOut();
+      navigate('/');
+    } catch (error) {
+      console.error('Error signing out:', error);
+    }
+  };
+
   return (
     <div className="min-h-screen">
       {/* Navbar */}
@@ -70,6 +93,46 @@ const Home = () => {
             >
               Consultancy
             </NavLink>
+            {user ? (
+              <>
+                <NotificationDropdown user={user} />
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="ghost" className="rounded-xl hover:bg-white/10">
+                      <Avatar className="h-8 w-8">
+                        <AvatarFallback className="bg-brand-orange text-white">
+                          {user.fullName.charAt(0).toUpperCase()}
+                        </AvatarFallback>
+                      </Avatar>
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end" className="w-56">
+                    <div className="px-2 py-1.5">
+                      <p className="text-sm font-medium">{user.fullName}</p>
+                      <p className="text-xs text-muted-foreground">{user.email}</p>
+                    </div>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem onClick={() => navigate('/my-courses')} className="cursor-pointer">
+                      <BookOpen className="mr-2 h-4 w-4" />
+                      <span>My Courses</span>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={handleSignOut} className="cursor-pointer">
+                      <LogOut className="mr-2 h-4 w-4" />
+                      <span>Sign Out</span>
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </>
+            ) : (
+              <>
+                <Button variant="outline" onClick={() => navigate('/signin')} className="rounded-xl border-white/20">
+                  Sign In
+                </Button>
+                <Button onClick={() => navigate('/signup')} className="bg-brand-orange hover:bg-brand-orange-hover text-white rounded-xl">
+                  Sign Up
+                </Button>
+              </>
+            )}
             <Button onClick={toggleTheme} variant="outline" size="icon" className="rounded-xl border-white/20 w-9 h-9" aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"} title={isDark ? "Switch to light mode" : "Switch to dark mode"}>
               {isDark ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
               <span className="sr-only">Toggle theme</span>
@@ -137,6 +200,48 @@ const Home = () => {
               >
                 Consultancy
               </NavLink>
+              {user ? (
+                <>
+                  <div className="px-3 py-2 border-t border-white/10 mt-2">
+                    <div className="text-xs text-muted-foreground mb-2">Signed in as</div>
+                    <div className="text-sm font-medium">{user.fullName}</div>
+                    <div className="text-xs text-muted-foreground">{user.email}</div>
+                  </div>
+                  <Button
+                    variant="ghost"
+                    onClick={() => {
+                      handleSignOut();
+                      setMobileOpen(false);
+                    }}
+                    className="w-full justify-start text-left"
+                  >
+                    <LogOut className="mr-2 h-4 w-4" />
+                    <span>Sign Out</span>
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Button
+                    variant="outline"
+                    onClick={() => {
+                      navigate('/signin');
+                      setMobileOpen(false);
+                    }}
+                    className="w-full justify-start text-left mt-2"
+                  >
+                    Sign In
+                  </Button>
+                  <Button
+                    onClick={() => {
+                      navigate('/signup');
+                      setMobileOpen(false);
+                    }}
+                    className="w-full justify-start bg-brand-orange hover:bg-brand-orange-hover text-white"
+                  >
+                    Sign Up
+                  </Button>
+                </>
+              )}
             </div>
           </div>
         )}
