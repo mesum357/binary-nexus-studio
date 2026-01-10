@@ -15,6 +15,7 @@ import EnrollCourse from "./pages/EnrollCourse";
 import Consultancy from "./pages/Consultancy";
 import ConsultancyTeam from "./pages/ConsultancyTeam";
 import ConsultancyServices from "./pages/ConsultancyServices";
+import ConsultancyMessages from "./pages/ConsultancyMessages";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import MyCourses from "./pages/MyCourses";
@@ -46,6 +47,7 @@ const App = () => (
           <Route path="/consultancy" element={<Consultancy />} />
           <Route path="/consultancy/services" element={<ConsultancyServices />} />
           <Route path="/consultancy/team" element={<ConsultancyTeam />} />
+          <Route path="/consultancy/messages" element={<ConsultancyMessages />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/my-courses" element={<MyCourses />} />

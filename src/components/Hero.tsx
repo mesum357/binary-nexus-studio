@@ -1,24 +1,23 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import heroBg from "@/assets/hero-bg.jpg";
 
 export const Hero = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background */}
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `url(${heroBg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-black">
+      {/* Subtle geometric pattern overlay */}
+      <div className="absolute inset-0 z-0 opacity-[0.03] dark:opacity-[0.05]">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)`,
+          backgroundSize: '40px 40px'
+        }} />
       </div>
+      
+      {/* Gradient accent orbs */}
+      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-brand-orange/20 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-brand-blue/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
       {/* Content */}
       <motion.div
@@ -90,9 +89,9 @@ export const Hero = () => {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 2 }}
-          className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2"
+          className="w-6 h-10 border-2 border-black/30 dark:border-white/30 rounded-full flex items-start justify-center p-2"
         >
-          <motion.div className="w-1 h-2 bg-white/60 rounded-full" />
+          <motion.div className="w-1 h-2 bg-black/60 dark:bg-white/60 rounded-full" />
         </motion.div>
       </motion.div>
     </section>

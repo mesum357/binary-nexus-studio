@@ -113,6 +113,15 @@ All colors MUST be HSL.
     @apply backdrop-blur-2xl bg-white/[0.08];
   }
 
+  /* Slow spin animation for founder frame */
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .animate-spin-slow {
+    animation: spin-slow 8s linear infinite;
+  }
+
   /* Left-to-right marquee utility */
   @keyframes marquee-left {
     0% { transform: translateX(0); }
