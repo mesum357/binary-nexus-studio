@@ -13,10 +13,16 @@ const binaryHubLinks = [
 
 // Background images for the hero slider
 const heroImages = [
-  "/images/branch-karachi.jpg",
-  "/images/testi1.jpg",
-  "/images/testi2.jpg",
-  "/images/testi3.jpg",
+  "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.35 PM (1).jpeg",
+  "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.35 PM.jpeg",
+  "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.37 PM.jpeg",
+  "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.38 PM.jpeg",
+  "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.39 PM (1).jpeg",
+  "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.39 PM.jpeg",
+  "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.40 PM (1).jpeg",
+  "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.43 PM.jpeg",
+  "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.45 PM (2).jpeg",
+  "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.45 PM.jpeg",
 ];
 
 const BinaryHub = () => {
