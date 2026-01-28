@@ -63,7 +63,7 @@ const BinaryHub = () => {
           <a href="/" className="flex items-center gap-2">
             <img src="/logo.png" alt="Logo" className="h-8 w-auto" />
           </a>
-          
+
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-2">
             <NavLink
@@ -81,10 +81,9 @@ const BinaryHub = () => {
                   to={link.url}
                   end={link.url === "/binary-hub"}
                   className={({ isActive }) =>
-                    `flex items-center gap-2 text-sm px-5 py-2.5 font-medium transition-all duration-200 rounded-full ${
-                      isActive
-                        ? "bg-brand-orange text-white shadow-lg"
-                        : "bg-brand-orange/80 text-white hover:bg-brand-orange hover:shadow-md"
+                    `flex items-center gap-2 text-sm px-5 py-2.5 font-medium transition-all duration-200 rounded-full ${isActive
+                      ? "bg-brand-orange text-white shadow-lg"
+                      : "bg-brand-orange/80 text-white hover:bg-brand-orange hover:shadow-md"
                     }`
                   }
                 >
@@ -93,10 +92,10 @@ const BinaryHub = () => {
                 </NavLink>
               );
             })}
-            <Button 
-              onClick={toggleTheme} 
-              variant="outline" 
-              size="icon" 
+            <Button
+              onClick={toggleTheme}
+              variant="outline"
+              size="icon"
               className="rounded-full border-black/20 dark:border-white/20 w-10 h-10 ml-2"
             >
               {isDark ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
@@ -105,17 +104,17 @@ const BinaryHub = () => {
 
           {/* Mobile nav */}
           <div className="flex md:hidden items-center gap-2">
-            <Button 
-              onClick={toggleTheme} 
-              variant="outline" 
-              size="icon" 
+            <Button
+              onClick={toggleTheme}
+              variant="outline"
+              size="icon"
               className="rounded-full border-black/20 dark:border-white/20 w-10 h-10"
             >
               {isDark ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
             </Button>
           </div>
         </div>
-        
+
         {/* Mobile menu bar */}
         <div className="md:hidden border-t border-white/10 bg-background/90 backdrop-blur">
           <div className="container mx-auto px-2 py-2 flex gap-1 overflow-x-auto">
@@ -134,10 +133,9 @@ const BinaryHub = () => {
                   to={link.url}
                   end={link.url === "/binary-hub"}
                   className={({ isActive }) =>
-                    `flex items-center gap-1 text-xs px-3 py-2 font-medium rounded-full whitespace-nowrap ${
-                      isActive
-                        ? "bg-brand-orange text-white"
-                        : "bg-brand-orange/80 text-white"
+                    `flex items-center gap-1 text-xs px-3 py-2 font-medium rounded-full whitespace-nowrap ${isActive
+                      ? "bg-brand-orange text-white"
+                      : "bg-brand-orange/80 text-white"
                     }`
                   }
                 >
@@ -162,7 +160,7 @@ const BinaryHub = () => {
             transition={{ duration: 1 }}
             className="absolute inset-0"
           >
-            <div 
+            <div
               className="absolute inset-0 bg-cover bg-center"
               style={{ backgroundImage: `url(${heroImages[currentSlide]})` }}
             />
@@ -171,13 +169,13 @@ const BinaryHub = () => {
         </AnimatePresence>
 
         {/* Slider Controls */}
-        <button 
+        <button
           onClick={prevSlide}
           className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/30 transition-all"
         >
           <ChevronLeft className="h-6 w-6 text-white" />
         </button>
-        <button 
+        <button
           onClick={nextSlide}
           className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/30 transition-all"
         >
@@ -190,11 +188,10 @@ const BinaryHub = () => {
             <button
               key={idx}
               onClick={() => setCurrentSlide(idx)}
-              className={`w-3 h-3 rounded-full transition-all ${
-                idx === currentSlide 
-                  ? "bg-brand-orange w-8" 
+              className={`w-3 h-3 rounded-full transition-all ${idx === currentSlide
+                  ? "bg-brand-orange w-8"
                   : "bg-white/50 hover:bg-white/70"
-              }`}
+                }`}
             />
           ))}
         </div>
@@ -211,7 +208,7 @@ const BinaryHub = () => {
               Welcome to <span className="text-brand-orange">Binary Hub</span>
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow">
-              Pakistan's premier technology education and freelance development company. 
+              Pakistan's premier technology education and freelance development company.
               Empowering individuals with cutting-edge IT skills.
             </p>
           </motion.div>
@@ -276,26 +273,24 @@ const BinaryHub = () => {
               >
                 <div className={`
                   relative overflow-hidden rounded-3xl border-2 transition-all duration-500
-                  ${hoveredBranch === branch.id 
-                    ? "border-brand-orange shadow-2xl shadow-brand-orange/20 scale-[1.02]" 
+                  ${hoveredBranch === branch.id
+                    ? "border-brand-orange shadow-2xl shadow-brand-orange/20 scale-[1.02]"
                     : "border-white/10 shadow-lg"
                   }
                 `}>
                   {/* Image */}
                   <div className="relative h-64 overflow-hidden">
-                    <img 
-                      src={branch.images[0]} 
+                    <img
+                      src={branch.images[0]}
                       alt={branch.name}
-                      className={`w-full h-full object-cover transition-transform duration-700 ${
-                        hoveredBranch === branch.id ? "scale-110" : "scale-100"
-                      }`}
+                      className={`w-full h-full object-cover transition-transform duration-700 ${hoveredBranch === branch.id ? "scale-110" : "scale-100"
+                        }`}
                     />
-                    <div className={`absolute inset-0 transition-opacity duration-500 ${
-                      hoveredBranch === branch.id 
-                        ? "bg-gradient-to-t from-black/80 via-black/40 to-transparent" 
+                    <div className={`absolute inset-0 transition-opacity duration-500 ${hoveredBranch === branch.id
+                        ? "bg-gradient-to-t from-black/80 via-black/40 to-transparent"
                         : "bg-gradient-to-t from-black/60 to-transparent"
-                    }`} />
-                    
+                      }`} />
+
                     {/* Location Badge */}
                     <div className="absolute top-4 left-4 flex items-center gap-2 bg-white/20 backdrop-blur-md rounded-full px-4 py-2">
                       <MapPin className="h-4 w-4 text-brand-orange" />
@@ -305,19 +300,17 @@ const BinaryHub = () => {
 
                   {/* Content */}
                   <div className="p-6 bg-background/80 backdrop-blur-sm">
-                    <h3 className={`text-2xl font-bold mb-3 transition-colors duration-300 ${
-                      hoveredBranch === branch.id ? "text-brand-orange" : ""
-                    }`}>
+                    <h3 className={`text-2xl font-bold mb-3 transition-colors duration-300 ${hoveredBranch === branch.id ? "text-brand-orange" : ""
+                      }`}>
                       {branch.name}
                     </h3>
                     <p className="text-foreground/70 leading-relaxed">
                       {branch.description}
                     </p>
-                    
+
                     {/* Animated underline */}
-                    <div className={`h-1 bg-gradient-to-r from-brand-orange to-brand-blue rounded-full mt-4 transition-all duration-500 ${
-                      hoveredBranch === branch.id ? "w-full" : "w-0"
-                    }`} />
+                    <div className={`h-1 bg-gradient-to-r from-brand-orange to-brand-blue rounded-full mt-4 transition-all duration-500 ${hoveredBranch === branch.id ? "w-full" : "w-0"
+                      }`} />
                   </div>
                 </div>
               </motion.div>
@@ -348,29 +341,28 @@ const BinaryHub = () => {
                 transition={{ delay: idx * 0.1 }}
                 onMouseEnter={() => setHoveredImpact(imp.id)}
                 onMouseLeave={() => setHoveredImpact(null)}
+                onClick={() => navigate(`/binary-hub/impact/${imp.id}`)}
                 className="group cursor-pointer"
               >
                 <div className={`
                   relative h-full overflow-hidden rounded-3xl transition-all duration-500
-                  ${hoveredImpact === imp.id 
-                    ? "shadow-2xl shadow-brand-orange/30 -translate-y-2" 
+                  ${hoveredImpact === imp.id
+                    ? "shadow-2xl shadow-brand-orange/30 -translate-y-2"
                     : "shadow-lg"
                   }
                 `}>
                   {/* Background Image */}
                   <div className="absolute inset-0">
-                    <img 
-                      src={imp.images[0]} 
+                    <img
+                      src={imp.images[0]}
                       alt={imp.title}
-                      className={`w-full h-full object-cover transition-all duration-700 ${
-                        hoveredImpact === imp.id ? "scale-110 blur-sm" : "scale-100"
-                      }`}
+                      className={`w-full h-full object-cover transition-all duration-700 ${hoveredImpact === imp.id ? "scale-110 blur-sm" : "scale-100"
+                        }`}
                     />
-                    <div className={`absolute inset-0 transition-all duration-500 ${
-                      hoveredImpact === imp.id 
-                        ? "bg-gradient-to-t from-brand-orange/90 via-brand-orange/70 to-brand-blue/60" 
+                    <div className={`absolute inset-0 transition-all duration-500 ${hoveredImpact === imp.id
+                        ? "bg-gradient-to-t from-brand-orange/90 via-brand-orange/70 to-brand-blue/60"
                         : "bg-gradient-to-t from-black/80 via-black/50 to-transparent"
-                    }`} />
+                      }`} />
                   </div>
 
                   {/* Content */}
@@ -379,8 +371,8 @@ const BinaryHub = () => {
                     <div className={`
                       absolute top-4 right-4 w-12 h-12 rounded-full flex items-center justify-center
                       font-bold text-lg transition-all duration-500
-                      ${hoveredImpact === imp.id 
-                        ? "bg-white text-brand-orange scale-110" 
+                      ${hoveredImpact === imp.id
+                        ? "bg-white text-brand-orange scale-110"
                         : "bg-white/20 backdrop-blur-sm text-white"
                       }
                     `}>
@@ -396,9 +388,8 @@ const BinaryHub = () => {
                       <h3 className="text-2xl font-bold text-white mb-3">
                         {imp.title}
                       </h3>
-                      <p className={`text-white/90 leading-relaxed transition-all duration-500 ${
-                        hoveredImpact === imp.id ? "opacity-100 max-h-40" : "opacity-70 max-h-20 overflow-hidden"
-                      }`}>
+                      <p className={`text-white/90 leading-relaxed transition-all duration-500 ${hoveredImpact === imp.id ? "opacity-100 max-h-40" : "opacity-70 max-h-20 overflow-hidden"
+                        }`}>
                         {imp.description}
                       </p>
                     </motion.div>

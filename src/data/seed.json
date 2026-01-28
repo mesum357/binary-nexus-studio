@@ -14,28 +14,40 @@
       "name": "Binary Hub Head Office",
       "location": "Jutial, Gilgit",
       "description": "Headquarters overseeing operations, training programs, and community initiatives.",
-      "images": ["/images/branch-karachi.jpg", "/placeholder.svg"]
+      "images": [
+        "/images/branch-karachi.jpg",
+        "/placeholder.svg"
+      ]
     },
     {
       "id": "bhb-2",
       "name": "Binary Hub Vocational Center",
       "location": "Jutial, Gilgit",
       "description": "Hands-on vocational training center focused on employable skills.",
-      "images": ["/images/branch-karachi.jpg", "/placeholder.svg"]
+      "images": [
+        "/images/branch-karachi.jpg",
+        "/placeholder.svg"
+      ]
     },
     {
       "id": "bhb-3",
       "name": "Binary Hub Incubation Center",
       "location": "Jutial, Gilgit",
       "description": "Incubation space to mentor startups and enable innovation.",
-      "images": ["/images/branch-karachi.jpg", "/placeholder.svg"]
+      "images": [
+        "/images/branch-karachi.jpg",
+        "/placeholder.svg"
+      ]
     },
     {
       "id": "bhb-4",
       "name": "Binary Hub YRC (Youth Resource Center)",
       "location": "Public Chowk, Jutial Gilgit",
       "description": "Youth engagement hub providing resources, guidance, and events.",
-      "images": ["/images/branch-karachi.jpg", "/placeholder.svg"]
+      "images": [
+        "/images/branch-karachi.jpg",
+        "/placeholder.svg"
+      ]
     }
   ],
   "impacts": [
@@ -43,37 +55,127 @@
       "id": "imp-1",
       "title": "Women Empowerment",
       "description": "Programs to empower women through skills training and entrepreneurship.",
-      "images": ["/images/testi1.jpg", "/placeholder.svg"]
+      "images": [
+        "/images/testi1.jpg",
+        "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.35 PM.jpeg"
+      ],
+      "details": {
+        "fullDescription": "Our Women Empowerment programs are designed to bridge the gender gap in the technology sector of Gilgit-Baltistan.",
+        "longContent": [
+          "Through dedicated training sessions, we provide women with essential digital skills, ranging from basic computer literacy to advanced software development.",
+          "Our mentorship programs connect aspiring female entrepreneurs with industry leaders, fostering a community of support and innovation.",
+          "By providing access to resources and market opportunities, we empower women to build sustainable careers and lead transformative change in their communities."
+        ],
+        "additionalImages": [
+          "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.35 PM (1).jpeg",
+          "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.37 PM.jpeg"
+        ]
+      }
     },
     {
       "id": "imp-2",
       "title": "Youth Empowerment with Digital Skills",
       "description": "Equipping youth with market-ready digital skills and mentorship.",
-      "images": ["/images/testi2.jpg", "/placeholder.svg"]
+      "images": [
+        "/images/testi2.jpg",
+        "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.38 PM.jpeg"
+      ],
+      "details": {
+        "fullDescription": "Empowering the next generation with the tools they need to succeed in the digital economy.",
+        "longContent": [
+          "Our digital skills program focuses on high-demand areas such as Full-Stack Development, UI/UX Design, and Digital Marketing.",
+          "Students engage in hands-on projects, building real-world applications that showcase their talent to global employers.",
+          "We offer comprehensive mentorship, guiding youth through the complexities of the freelance market and career development."
+        ],
+        "additionalImages": [
+          "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.39 PM (1).jpeg",
+          "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.39 PM.jpeg"
+        ]
+      }
     },
     {
       "id": "imp-3",
       "title": "Vocational Training",
       "description": "Practical, job-focused training across multiple disciplines.",
-      "images": ["/images/project-ecom.jpg", "/placeholder.svg"]
+      "images": [
+        "/images/project-ecom.jpg",
+        "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.40 PM (1).jpeg"
+      ],
+      "details": {
+        "fullDescription": "Bridging the gap between education and employment through practical vocational training.",
+        "longContent": [
+          "Our vocational center offers specialized courses in Bookkeeping, Amazon FBA, and Graphic Designing.",
+          "We emphasize practical application, ensuring that every student gains the confidence to enter the workforce immediately upon completion.",
+          "Collaboration with local industries allows us to align our curriculum with market demands, providing students with a direct path to employment."
+        ],
+        "additionalImages": [
+          "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.43 PM.jpeg",
+          "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.45 PM.jpeg"
+        ]
+      }
     },
     {
       "id": "imp-4",
       "title": "Child Protection",
       "description": "Initiatives for safeguarding children and raising awareness.",
-      "images": ["/images/testi3.jpg", "/placeholder.svg"]
+      "images": [
+        "/images/testi3.jpg",
+        "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.45 PM (2).jpeg"
+      ],
+      "details": {
+        "fullDescription": "Committed to creating a safe and nurturing environment for children in our digital age.",
+        "longContent": [
+          "We conduct awareness campaigns for parents and educators on digital safety and child protection online.",
+          "Our initiatives include workshops on ethical technology use and identifying online risks for children.",
+          "Partnering with local organizations, we work towards building a community-wide support system for child safeguarding."
+        ],
+        "additionalImages": [
+          "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.35 PM.jpeg",
+          "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.37 PM.jpeg"
+        ]
+      }
     },
     {
       "id": "imp-5",
       "title": "Youth Engagement in Digital Platforms",
       "description": "Creating constructive avenues for youth participation online.",
-      "images": ["/images/mentor-ali.jpg", "/placeholder.svg"]
+      "images": [
+        "/images/mentor-ali.jpg",
+        "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.38 PM.jpeg"
+      ],
+      "details": {
+        "fullDescription": "Promoting positive and constructive engagement for youth on digital social platforms.",
+        "longContent": [
+          "We encourage youth to leverage digital platforms for storytelling, social advocacy, and personal branding.",
+          "Our programs teach responsible social media use and the importance of digital citizenship.",
+          "Through competitions and collaborative projects, we provide spaces for youth to showcase their creativity and voice online."
+        ],
+        "additionalImages": [
+          "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.39 PM.jpeg",
+          "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.40 PM (1).jpeg"
+        ]
+      }
     },
     {
       "id": "imp-6",
       "title": "Tourism Promotion in GB",
       "description": "Promoting Gilgit-Baltistan's culture and landscapes through digital storytelling and campaigns.",
-      "images": ["/images/project-agency.jpg", "/placeholder.svg"]
+      "images": [
+        "/images/project-agency.jpg",
+        "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.43 PM.jpeg"
+      ],
+      "details": {
+        "fullDescription": "Showcasing the breathtaking beauty and rich heritage of Gilgit-Baltistan to the world.",
+        "longContent": [
+          "Our digital storytelling campaigns highlight the unique culture, landscapes, and experiences Gilgit-Baltistan has to offer.",
+          "We train local youth in content creation and photography to promote tourism through authentic local perspectives.",
+          "By leveraging social media and web platforms, we aim to attract global travelers and boost the local economy through digital tourism initiatives."
+        ],
+        "additionalImages": [
+          "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.45 PM.jpeg",
+          "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.35 PM (1).jpeg"
+        ]
+      }
     }
   ],
   "branches": [
@@ -97,9 +199,18 @@
     }
   ],
   "achievements": [
-    { "label": "Students Trained", "value": 1200 },
-    { "label": "Projects Completed", "value": 450 },
-    { "label": "Freelancers Placed", "value": 320 }
+    {
+      "label": "Students Trained",
+      "value": 1200
+    },
+    {
+      "label": "Projects Completed",
+      "value": 450
+    },
+    {
+      "label": "Freelancers Placed",
+      "value": 320
+    }
   ],
   "projects": [
     {
@@ -241,12 +352,22 @@
         {
           "name": "Faisal Raza",
           "profile": "https://portfolio.example/faisal",
-          "skills": ["React", "Next.js", "Node.js", "MongoDB"]
+          "skills": [
+            "React",
+            "Next.js",
+            "Node.js",
+            "MongoDB"
+          ]
         },
         {
           "name": "Hira Tanveer",
           "profile": "https://portfolio.example/hira",
-          "skills": ["Vue.js", "Laravel", "MySQL", "AWS"]
+          "skills": [
+            "Vue.js",
+            "Laravel",
+            "MySQL",
+            "AWS"
+          ]
         }
       ]
     },
@@ -256,12 +377,21 @@
         {
           "name": "Mubeen Ahmed",
           "profile": "https://portfolio.example/mubeen",
-          "skills": ["Photoshop", "Illustrator", "Branding", "Print Design"]
+          "skills": [
+            "Photoshop",
+            "Illustrator",
+            "Branding",
+            "Print Design"
+          ]
         },
         {
           "name": "Zainab Ali",
           "profile": "https://portfolio.example/zainab",
-          "skills": ["InDesign", "After Effects", "Motion Graphics"]
+          "skills": [
+            "InDesign",
+            "After Effects",
+            "Motion Graphics"
+          ]
         }
       ]
     },
@@ -271,7 +401,12 @@
         {
           "name": "Hassan Malik",
           "profile": "https://portfolio.example/hassan",
-          "skills": ["Figma", "Adobe XD", "User Research", "Prototyping"]
+          "skills": [
+            "Figma",
+            "Adobe XD",
+            "User Research",
+            "Prototyping"
+          ]
         }
       ]
     },
@@ -281,7 +416,12 @@
         {
           "name": "Amna Shahid",
           "profile": "https://portfolio.example/amna",
-          "skills": ["SEO", "Google Ads", "Facebook Ads", "Analytics"]
+          "skills": [
+            "SEO",
+            "Google Ads",
+            "Facebook Ads",
+            "Analytics"
+          ]
         }
       ]
     }
