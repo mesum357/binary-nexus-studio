@@ -91,63 +91,90 @@ const ImpactDetail = () => {
                 </div>
             </section>
 
-            {/* Content Section */}
-            <section className="py-20 container mx-auto px-4">
-                <div className="max-w-4xl mx-auto">
+            {/* Blog Post Content Section */}
+            <section className="py-20 relative px-4">
+                {/* Background decorative elements */}
+                <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+                    <div className="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] rounded-full bg-brand-orange/5 blur-[120px]" />
+                    <div className="absolute top-[40%] -right-[10%] w-[40%] h-[40%] rounded-full bg-brand-blue/5 blur-[100px]" />
+                </div>
+
+                <article className="max-w-3xl mx-auto">
                     <motion.div
                         initial={{ y: 20, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
+                        transition={{ duration: 0.8 }}
                     >
-                        <h2 className="text-3xl font-bold mb-6 gradient-text">Overview</h2>
-                        <p className="text-lg md:text-xl leading-relaxed text-foreground/80 mb-12">
+                        {/* Introduction/Subheading */}
+                        <p className="text-2xl md:text-3xl font-light leading-relaxed text-foreground/80 mb-16 border-l-4 border-brand-orange pl-6 py-2">
                             {impact.details?.fullDescription}
                         </p>
+                    </motion.div>
 
-                        <div className="grid gap-8 mb-20">
-                            {impact.details?.longContent.map((paragraph, idx) => (
-                                <motion.div
-                                    key={idx}
-                                    initial={{ x: idx % 2 === 0 ? -20 : 20, opacity: 0 }}
-                                    whileInView={{ x: 0, opacity: 1 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: idx * 0.1, duration: 0.5 }}
-                                    className="glass-card p-6 md:p-8"
+                    {/* The long content interleaved with images */}
+                    {impact.details?.longContent.map((paragraph, idx) => (
+                        <div key={idx} className="mb-16">
+                            <motion.p
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-100px" }}
+                                transition={{ duration: 0.8 }}
+                                className="text-lg md:text-xl leading-loose text-foreground/90 mb-16 tracking-wide"
+                            >
+                                {paragraph}
+                            </motion.p>
+
+                            {/* Interleave an image if available at this index */}
+                            {impact.details?.additionalImages && impact.details.additionalImages[idx] && (
+                                <motion.figure
+                                    initial={{ opacity: 0, scale: 0.95, y: 40 }}
+                                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                                    viewport={{ once: true, margin: "-100px" }}
+                                    transition={{ duration: 0.8 }}
+                                    className="my-16"
                                 >
-                                    <p className="text-lg leading-relaxed">{paragraph}</p>
-                                </motion.div>
-                            ))}
+                                    <div className="rounded-[2rem] overflow-hidden shadow-2xl border border-black/5 dark:border-white/10 group relative">
+                                        <img
+                                            src={impact.details.additionalImages[idx]}
+                                            alt={`${impact.title} detail ${idx + 1}`}
+                                            className="w-full h-auto max-h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
+                                        />
+                                        <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                    </div>
+                                    <figcaption className="text-center text-sm text-muted-foreground mt-4 italic">
+                                        {impact.title} - Visual Impact {idx + 1}
+                                    </figcaption>
+                                </motion.figure>
+                            )}
                         </div>
+                    ))}
 
-                        {/* Image Gallery */}
-                        <h2 className="text-3xl font-bold mb-8 gradient-text text-center">Visual Impact</h2>
-                        <div className="grid md:grid-cols-2 gap-6">
-                            {impact.details?.additionalImages.map((img, idx) => (
-                                <motion.div
-                                    key={idx}
-                                    initial={{ scale: 0.9, opacity: 0 }}
-                                    whileInView={{ scale: 1, opacity: 1 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: idx * 0.1, duration: 0.5 }}
-                                    className="relative group overflow-hidden rounded-3xl aspect-video shadow-xl"
-                                >
+                    {/* Leftover Images if any */}
+                    {impact.details?.additionalImages && impact.details.additionalImages.length > (impact.details?.longContent.length || 0) && (
+                        <motion.div
+                            className="grid md:grid-cols-2 gap-6 my-16"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                        >
+                            {impact.details.additionalImages.slice(impact.details?.longContent.length).map((img, idx) => (
+                                <figure key={idx} className="rounded-3xl overflow-hidden shadow-xl border border-black/5 dark:border-white/10 group">
                                     <img
                                         src={img}
-                                        alt={`${impact.title} detail ${idx + 1}`}
-                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                        alt={`${impact.title} additional detail`}
+                                        className="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-110"
                                     />
-                                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
-                                </motion.div>
+                                </figure>
                             ))}
-                        </div>
-                    </motion.div>
+                        </motion.div>
+                    )}
 
                     <motion.div
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
-                        className="mt-20 text-center"
+                        className="mt-24 pt-12 border-t border-black/10 dark:border-white/10 text-center"
                     >
                         <Button
                             onClick={() => navigate("/binary-hub")}
@@ -157,7 +184,7 @@ const ImpactDetail = () => {
                             Explore More Impact Areas
                         </Button>
                     </motion.div>
-                </div>
+                </article>
             </section>
 
             {/* Footer-like space */}

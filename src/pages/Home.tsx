@@ -19,6 +19,14 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { NotificationDropdown } from "@/components/NotificationDropdown";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const Home = () => {
   const [isDark, setIsDark] = useState<boolean>(false);
@@ -304,18 +312,7 @@ const Home = () => {
                 transition={{ duration: 0.8, delay: 0.3, type: "spring", stiffness: 100 }}
               >
                 <div className="relative w-full max-w-sm mx-auto group">
-                  {/* Animated rotating border frame */}
-                  <div className="absolute -inset-3 rounded-3xl opacity-75">
-                    <div 
-                      className="absolute inset-0 rounded-3xl animate-spin-slow"
-                      style={{
-                        background: 'conic-gradient(from 0deg, hsl(20 79% 54%), hsl(203 100% 30%), hsl(20 79% 54%))',
-                        animationDuration: '8s'
-                      }}
-                    />
-                  </div>
-                  {/* Inner glow effect */}
-                  <div className="absolute -inset-1 bg-gradient-to-r from-brand-orange via-brand-blue to-brand-orange rounded-3xl blur-sm opacity-50 group-hover:opacity-75 transition-opacity duration-500" />
+
                   {/* Image container */}
                   <div className="relative aspect-square rounded-3xl overflow-hidden border-4 border-white/20 shadow-glow">
                     <img
@@ -418,33 +415,49 @@ const Home = () => {
             }}
           >
             {seedData.projects.map((project) => (
-              <motion.div
-                key={project.id}
-                variants={{
-                  hidden: { opacity: 0, y: 50, scale: 0.9 },
-                  visible: { opacity: 1, y: 0, scale: 1 }
-                }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                whileHover={{ y: -12, scale: 1.02 }}
-                className="glass-card overflow-hidden group cursor-pointer"
-              >
-                <div className="h-48 bg-gradient-primary flex items-center justify-center relative overflow-hidden">
-                  <motion.div 
-                    className="text-4xl font-bold text-white"
-                    whileHover={{ scale: 1.2, rotate: 5 }}
-                    transition={{ type: "spring", stiffness: 300 }}
+              <Dialog key={project.id}>
+                <DialogTrigger asChild>
+                  <motion.div
+                    variants={{
+                      hidden: { opacity: 0, y: 50, scale: 0.9 },
+                      visible: { opacity: 1, y: 0, scale: 1 }
+                    }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                    whileHover={{ y: -12, scale: 1.02 }}
+                    className="glass-card overflow-hidden group cursor-pointer h-full"
                   >
-                    {project.title.charAt(0)}
+                    <div className="h-48 bg-white/5 dark:bg-black/20 flex items-center justify-center relative overflow-hidden p-4">
+                      <img 
+                        src={project.image} 
+                        alt={project.title} 
+                        className="w-full h-full object-contain filter drop-shadow-md group-hover:scale-105 transition-transform duration-500" 
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold mb-2 group-hover:gradient-text transition-all">
+                        {project.title}
+                      </h3>
+                      <p className="text-muted text-sm line-clamp-2">{project.summary}</p>
+                    </div>
                   </motion.div>
-                  <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 group-hover:gradient-text transition-all">
-                    {project.title}
-                  </h3>
-                  <p className="text-muted text-sm">{project.summary}</p>
-                </div>
-              </motion.div>
+                </DialogTrigger>
+                <DialogContent className="max-w-3xl border-white/10 glass-card bg-background/95 backdrop-blur-xl">
+                  <DialogHeader>
+                    <DialogTitle className="text-2xl font-bold gradient-text">{project.title}</DialogTitle>
+                    <DialogDescription className="text-foreground/80 text-base">
+                      {project.summary}
+                    </DialogDescription>
+                  </DialogHeader>
+                  <div className="mt-4 rounded-xl overflow-hidden bg-white/5 dark:bg-black/20 p-4 flex justify-center items-center">
+                    <img 
+                      src={project.image} 
+                      alt={project.title} 
+                      className="max-h-[60vh] w-auto object-contain rounded-lg drop-shadow-xl" 
+                    />
+                  </div>
+                </DialogContent>
+              </Dialog>
             ))}
           </motion.div>
         </div>

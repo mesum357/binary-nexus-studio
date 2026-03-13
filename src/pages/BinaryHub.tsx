@@ -13,6 +13,18 @@ const binaryHubLinks = [
 
 // Background images for the hero slider
 const heroImages = [
+  "/images/binary hub/SliderBinaryHub/FXMM3110.JPG",
+  "/images/binary hub/SliderBinaryHub/GKMB9938.JPG",
+  "/images/binary hub/SliderBinaryHub/GKSY9432.JPG",
+  "/images/binary hub/SliderBinaryHub/GOWG6427.JPG",
+  "/images/binary hub/SliderBinaryHub/GPFZ4546.JPG",
+  "/images/binary hub/SliderBinaryHub/GQEE4953.JPG",
+  "/images/binary hub/SliderBinaryHub/GYMV1106.JPG",
+  "/images/binary hub/SliderBinaryHub/HEJR9268.JPG",
+  "/images/binary hub/SliderBinaryHub/HUZE4057.JPG",
+  "/images/binary hub/SliderBinaryHub/HXND1033.JPG",
+  "/images/binary hub/SliderBinaryHub/IHUU0624.JPG",
+  "/images/binary hub/SliderBinaryHub/IMG_0120.JPG",
   "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.35 PM (1).jpeg",
   "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.35 PM.jpeg",
   "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.37 PM.jpeg",
@@ -25,12 +37,78 @@ const heroImages = [
   "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.45 PM.jpeg",
 ];
 
+const BranchCard = ({ branch, idx, navigate }: any) => {
+  const [currentImg, setCurrentImg] = useState(0);
+
+  useEffect(() => {
+    if (!branch.images || branch.images.length <= 1) return;
+    const timer = setInterval(() => {
+      setCurrentImg((prev) => (prev + 1) % branch.images.length);
+    }, 4000 + (idx % 2) * 500);
+    return () => clearInterval(timer);
+  }, [branch.images, idx]);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 40, scale: 0.95 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ delay: idx * 0.1, duration: 0.5 }}
+      onClick={() => navigate(`/binary-hub/branches/${branch.id}`)}
+      className="group relative cursor-pointer h-full"
+    >
+      <div className={`
+        relative overflow-hidden border-2 transition-all duration-700 flex flex-col h-full
+        border-brand-orange/20 shadow-xl group-hover:border-brand-orange group-hover:shadow-[0_20px_50px_rgba(255,107,0,0.3)] group-hover:scale-[1.03] group-hover:-translate-y-2
+        ${idx % 2 === 0
+          ? "rounded-tr-[5rem] rounded-bl-[5rem] rounded-tl-2xl rounded-br-2xl group-hover:rounded-tr-2xl group-hover:rounded-bl-2xl group-hover:rounded-tl-[5rem] group-hover:rounded-br-[5rem]"
+          : "rounded-tl-[5rem] rounded-br-[5rem] rounded-tr-2xl rounded-bl-2xl group-hover:rounded-tl-2xl group-hover:rounded-br-2xl group-hover:rounded-tr-[5rem] group-hover:rounded-bl-[5rem]"}
+      `}>
+        {/* Image */}
+        <div className="relative h-72 overflow-hidden bg-black/10 dark:bg-white/5">
+          <AnimatePresence mode="popLayout">
+            <motion.img
+              key={currentImg}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.8 }}
+              src={branch.images[currentImg]}
+              alt={branch.name}
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 scale-100 group-hover:scale-110"
+            />
+          </AnimatePresence>
+          <div className="absolute inset-0 transition-opacity duration-500 bg-gradient-to-t from-black/60 to-transparent group-hover:from-black/80 group-hover:via-black/40 group-hover:to-transparent z-10" />
+
+          {/* Location Badge */}
+          <div className="absolute top-4 left-4 flex items-center gap-2 bg-white/20 backdrop-blur-md rounded-full px-4 py-2 z-20">
+            <MapPin className="h-4 w-4 text-brand-orange" />
+            <span className="text-white text-sm font-medium">{branch.location}</span>
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="p-8 bg-background/90 backdrop-blur-md relative z-20 flex-grow flex flex-col justify-center">
+          <h3 className="text-2xl font-bold mb-3 transition-colors duration-300 group-hover:text-brand-orange">
+            {branch.name}
+          </h3>
+          <p className="text-foreground/70 leading-relaxed">
+            {branch.description}
+          </p>
+
+          {/* Animated underline */}
+          <div className="h-1 bg-gradient-to-r from-brand-orange to-brand-blue rounded-full mt-4 transition-all duration-500 w-0 group-hover:w-full" />
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
 const BinaryHub = () => {
   const navigate = useNavigate();
   const [isDark, setIsDark] = useState<boolean>(false);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [hoveredBranch, setHoveredBranch] = useState<string | null>(null);
-  const [hoveredImpact, setHoveredImpact] = useState<string | null>(null);
+
 
   useEffect(() => {
     const current = document.documentElement.classList.contains("dark");
@@ -162,7 +240,7 @@ const BinaryHub = () => {
           >
             <div
               className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${heroImages[currentSlide]})` }}
+              style={{ backgroundImage: `url("${heroImages[currentSlide]}")` }}
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
           </motion.div>
@@ -189,8 +267,8 @@ const BinaryHub = () => {
               key={idx}
               onClick={() => setCurrentSlide(idx)}
               className={`w-3 h-3 rounded-full transition-all ${idx === currentSlide
-                  ? "bg-brand-orange w-8"
-                  : "bg-white/50 hover:bg-white/70"
+                ? "bg-brand-orange w-8"
+                : "bg-white/50 hover:bg-white/70"
                 }`}
             />
           ))}
@@ -261,59 +339,13 @@ const BinaryHub = () => {
 
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {seedData.binaryHubBranches?.map((branch, idx) => (
-              <motion.div
+              <BranchCard
                 key={branch.id}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                onMouseEnter={() => setHoveredBranch(branch.id)}
-                onMouseLeave={() => setHoveredBranch(null)}
-                className="group relative"
-              >
-                <div className={`
-                  relative overflow-hidden rounded-3xl border-2 transition-all duration-500
-                  ${hoveredBranch === branch.id
-                    ? "border-brand-orange shadow-2xl shadow-brand-orange/20 scale-[1.02]"
-                    : "border-white/10 shadow-lg"
-                  }
-                `}>
-                  {/* Image */}
-                  <div className="relative h-64 overflow-hidden">
-                    <img
-                      src={branch.images[0]}
-                      alt={branch.name}
-                      className={`w-full h-full object-cover transition-transform duration-700 ${hoveredBranch === branch.id ? "scale-110" : "scale-100"
-                        }`}
-                    />
-                    <div className={`absolute inset-0 transition-opacity duration-500 ${hoveredBranch === branch.id
-                        ? "bg-gradient-to-t from-black/80 via-black/40 to-transparent"
-                        : "bg-gradient-to-t from-black/60 to-transparent"
-                      }`} />
+                branch={branch}
+                idx={idx}
 
-                    {/* Location Badge */}
-                    <div className="absolute top-4 left-4 flex items-center gap-2 bg-white/20 backdrop-blur-md rounded-full px-4 py-2">
-                      <MapPin className="h-4 w-4 text-brand-orange" />
-                      <span className="text-white text-sm font-medium">{branch.location}</span>
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="p-6 bg-background/80 backdrop-blur-sm">
-                    <h3 className={`text-2xl font-bold mb-3 transition-colors duration-300 ${hoveredBranch === branch.id ? "text-brand-orange" : ""
-                      }`}>
-                      {branch.name}
-                    </h3>
-                    <p className="text-foreground/70 leading-relaxed">
-                      {branch.description}
-                    </p>
-
-                    {/* Animated underline */}
-                    <div className={`h-1 bg-gradient-to-r from-brand-orange to-brand-blue rounded-full mt-4 transition-all duration-500 ${hoveredBranch === branch.id ? "w-full" : "w-0"
-                      }`} />
-                  </div>
-                </div>
-              </motion.div>
+                navigate={navigate}
+              />
             ))}
           </div>
         </div>
@@ -331,76 +363,53 @@ const BinaryHub = () => {
             Our Impact
           </motion.h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {seedData.impacts?.map((imp, idx) => (
               <motion.div
                 key={imp.id}
                 initial={{ opacity: 0, y: 40, scale: 0.95 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                onMouseEnter={() => setHoveredImpact(imp.id)}
-                onMouseLeave={() => setHoveredImpact(null)}
+                transition={{ delay: idx * 0.1, duration: 0.5 }}
                 onClick={() => navigate(`/binary-hub/impact/${imp.id}`)}
-                className="group cursor-pointer"
+                className="group cursor-pointer flex"
               >
-                <div className={`
-                  relative h-full overflow-hidden rounded-3xl transition-all duration-500
-                  ${hoveredImpact === imp.id
-                    ? "shadow-2xl shadow-brand-orange/30 -translate-y-2"
-                    : "shadow-lg"
-                  }
-                `}>
-                  {/* Background Image */}
-                  <div className="absolute inset-0">
+                <div className="w-full relative flex flex-col bg-background/60 dark:bg-black/20 backdrop-blur-md rounded-[2rem] border border-black/5 dark:border-white/10 overflow-hidden transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-brand-orange/20 hover:-translate-y-2 hover:border-brand-orange/30">
+                  {/* Image Top Half */}
+                  <div className="relative h-64 sm:h-72 w-full overflow-hidden shrink-0 bg-black/5 dark:bg-white/5">
                     <img
                       src={imp.images[0]}
                       alt={imp.title}
-                      className={`w-full h-full object-cover transition-all duration-700 ${hoveredImpact === imp.id ? "scale-110 blur-sm" : "scale-100"
-                        }`}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
-                    <div className={`absolute inset-0 transition-all duration-500 ${hoveredImpact === imp.id
-                        ? "bg-gradient-to-t from-brand-orange/90 via-brand-orange/70 to-brand-blue/60"
-                        : "bg-gradient-to-t from-black/80 via-black/50 to-transparent"
-                      }`} />
-                  </div>
+                    {/* Subtle gradient so the image isn't too harsh */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60" />
 
-                  {/* Content */}
-                  <div className="relative h-80 p-6 flex flex-col justify-end">
-                    {/* Icon/Number Badge */}
-                    <div className={`
-                      absolute top-4 right-4 w-12 h-12 rounded-full flex items-center justify-center
-                      font-bold text-lg transition-all duration-500
-                      ${hoveredImpact === imp.id
-                        ? "bg-white text-brand-orange scale-110"
-                        : "bg-white/20 backdrop-blur-sm text-white"
-                      }
-                    `}>
+                    {/* Badge */}
+                    <div className="absolute top-6 right-6 w-14 h-14 rounded-full flex items-center justify-center font-bold text-xl backdrop-blur-md bg-white/90 text-brand-orange shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:bg-brand-orange group-hover:text-white border border-black/5">
                       {String(idx + 1).padStart(2, '0')}
                     </div>
+                  </div>
 
-                    <motion.div
-                      animate={{
-                        y: hoveredImpact === imp.id ? 0 : 10,
-                      }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <h3 className="text-2xl font-bold text-white mb-3">
+                  {/* Content Bottom Half */}
+                  <div className="p-8 md:p-10 flex flex-col flex-grow">
+                    <div className="flex-grow">
+                      <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground transition-colors duration-300 group-hover:text-brand-orange">
                         {imp.title}
                       </h3>
-                      <p className={`text-white/90 leading-relaxed transition-all duration-500 ${hoveredImpact === imp.id ? "opacity-100 max-h-40" : "opacity-70 max-h-20 overflow-hidden"
-                        }`}>
+                      <p className="text-foreground/70 leading-relaxed text-lg line-clamp-3">
                         {imp.description}
                       </p>
-                    </motion.div>
+                    </div>
 
-                    {/* Learn More indicator */}
-                    <div className={`
-                      flex items-center gap-2 mt-4 text-white font-medium transition-all duration-300
-                      ${hoveredImpact === imp.id ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"}
-                    `}>
-                      <span>Learn More</span>
-                      <ChevronRight className="h-4 w-4" />
+                    {/* Footer/Action */}
+                    <div className="mt-8 pt-6 border-t border-black/5 dark:border-white/10 flex items-center justify-between">
+                      <div className="flex items-center gap-3 text-brand-orange font-medium transition-colors">
+                        <span className="text-sm uppercase tracking-wider font-bold group-hover:text-brand-orange-hover">Read Story</span>
+                        <div className="w-8 h-8 rounded-full bg-brand-orange/10 flex items-center justify-center transition-all duration-300 group-hover:translate-x-2 group-hover:bg-brand-orange group-hover:text-white">
+                          <ChevronRight className="h-4 w-4" />
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

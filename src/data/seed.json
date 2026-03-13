@@ -15,8 +15,11 @@
       "location": "Jutial, Gilgit",
       "description": "Headquarters overseeing operations, training programs, and community initiatives.",
       "images": [
-        "/images/branch-karachi.jpg",
-        "/placeholder.svg"
+        "/images/binary hub/branches/head1.jpeg",
+        "/images/binary hub/branches/head2.jpeg",
+        "/images/binary hub/branches/head3.jpeg",
+        "/images/binary hub/branches/head4.jpeg",
+        "/images/binary hub/branches/head5.jpeg"
       ]
     },
     {
@@ -25,8 +28,10 @@
       "location": "Jutial, Gilgit",
       "description": "Hands-on vocational training center focused on employable skills.",
       "images": [
-        "/images/branch-karachi.jpg",
-        "/placeholder.svg"
+        "/images/binary hub/branches/vocational1.jpeg",
+        "/images/binary hub/branches/vocation2.jpeg",
+        "/images/binary hub/branches/vocation3.jpeg",
+        "/images/binary hub/branches/vocation4.jpeg"
       ]
     },
     {
@@ -35,8 +40,10 @@
       "location": "Jutial, Gilgit",
       "description": "Incubation space to mentor startups and enable innovation.",
       "images": [
-        "/images/branch-karachi.jpg",
-        "/placeholder.svg"
+        "/images/binary hub/branches/incubation1.jpeg",
+        "/images/binary hub/branches/incubation2.jpeg",
+        "/images/binary hub/branches/incubation3.jpeg",
+        "/images/binary hub/branches/incubation4.jpeg"
       ]
     },
     {
@@ -45,8 +52,9 @@
       "location": "Public Chowk, Jutial Gilgit",
       "description": "Youth engagement hub providing resources, guidance, and events.",
       "images": [
-        "/images/branch-karachi.jpg",
-        "/placeholder.svg"
+        "/images/binary hub/branches/yrc1.jpeg",
+        "/images/binary hub/branches/yrc2.jpeg",
+        "/images/binary hub/branches/yrc3.jpeg"
       ]
     }
   ],
@@ -56,8 +64,8 @@
       "title": "Women Empowerment",
       "description": "Programs to empower women through skills training and entrepreneurship.",
       "images": [
-        "/images/testi1.jpg",
-        "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.35 PM.jpeg"
+        "/images/binary hub/Women/IMG_1004.JPG",
+        "/images/binary hub/Women/IMG_1254.JPG"
       ],
       "details": {
         "fullDescription": "Our Women Empowerment programs are designed to bridge the gender gap in the technology sector of Gilgit-Baltistan.",
@@ -67,8 +75,8 @@
           "By providing access to resources and market opportunities, we empower women to build sustainable careers and lead transformative change in their communities."
         ],
         "additionalImages": [
-          "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.35 PM (1).jpeg",
-          "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.37 PM.jpeg"
+          "/images/binary hub/Women/IMG_1254.JPG",
+          "/images/binary hub/Women/IMG_1258.JPG"
         ]
       }
     },
@@ -77,8 +85,8 @@
       "title": "Youth Empowerment with Digital Skills",
       "description": "Equipping youth with market-ready digital skills and mentorship.",
       "images": [
-        "/images/testi2.jpg",
-        "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.38 PM.jpeg"
+        "/images/binary hub/Youth/IMG_1377.JPG",
+        "/images/binary hub/Youth/IMG_1501.JPG"
       ],
       "details": {
         "fullDescription": "Empowering the next generation with the tools they need to succeed in the digital economy.",
@@ -88,8 +96,8 @@
           "We offer comprehensive mentorship, guiding youth through the complexities of the freelance market and career development."
         ],
         "additionalImages": [
-          "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.39 PM (1).jpeg",
-          "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.39 PM.jpeg"
+          "/images/binary hub/Youth/IMG_2517.JPG",
+          "/images/binary hub/Youth/IMG_7374.JPG"
         ]
       }
     },
@@ -111,69 +119,6 @@
         "additionalImages": [
           "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.43 PM.jpeg",
           "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.45 PM.jpeg"
-        ]
-      }
-    },
-    {
-      "id": "imp-4",
-      "title": "Child Protection",
-      "description": "Initiatives for safeguarding children and raising awareness.",
-      "images": [
-        "/images/testi3.jpg",
-        "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.45 PM (2).jpeg"
-      ],
-      "details": {
-        "fullDescription": "Committed to creating a safe and nurturing environment for children in our digital age.",
-        "longContent": [
-          "We conduct awareness campaigns for parents and educators on digital safety and child protection online.",
-          "Our initiatives include workshops on ethical technology use and identifying online risks for children.",
-          "Partnering with local organizations, we work towards building a community-wide support system for child safeguarding."
-        ],
-        "additionalImages": [
-          "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.35 PM.jpeg",
-          "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.37 PM.jpeg"
-        ]
-      }
-    },
-    {
-      "id": "imp-5",
-      "title": "Youth Engagement in Digital Platforms",
-      "description": "Creating constructive avenues for youth participation online.",
-      "images": [
-        "/images/mentor-ali.jpg",
-        "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.38 PM.jpeg"
-      ],
-      "details": {
-        "fullDescription": "Promoting positive and constructive engagement for youth on digital social platforms.",
-        "longContent": [
-          "We encourage youth to leverage digital platforms for storytelling, social advocacy, and personal branding.",
-          "Our programs teach responsible social media use and the importance of digital citizenship.",
-          "Through competitions and collaborative projects, we provide spaces for youth to showcase their creativity and voice online."
-        ],
-        "additionalImages": [
-          "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.39 PM.jpeg",
-          "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.40 PM (1).jpeg"
-        ]
-      }
-    },
-    {
-      "id": "imp-6",
-      "title": "Tourism Promotion in GB",
-      "description": "Promoting Gilgit-Baltistan's culture and landscapes through digital storytelling and campaigns.",
-      "images": [
-        "/images/project-agency.jpg",
-        "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.43 PM.jpeg"
-      ],
-      "details": {
-        "fullDescription": "Showcasing the breathtaking beauty and rich heritage of Gilgit-Baltistan to the world.",
-        "longContent": [
-          "Our digital storytelling campaigns highlight the unique culture, landscapes, and experiences Gilgit-Baltistan has to offer.",
-          "We train local youth in content creation and photography to promote tourism through authentic local perspectives.",
-          "By leveraging social media and web platforms, we aim to attract global travelers and boost the local economy through digital tourism initiatives."
-        ],
-        "additionalImages": [
-          "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.45 PM.jpeg",
-          "/images/binary hub/SliderBinaryHub/WhatsApp Image 2026-01-28 at 1.51.35 PM (1).jpeg"
         ]
       }
     }
@@ -215,27 +160,33 @@
   "projects": [
     {
       "id": "p1",
-      "title": "E-commerce Platform",
-      "image": "/images/project-ecom.jpg",
-      "summary": "Fullstack e-commerce solution for a leading local retailer with inventory management"
+      "title": "CRM System",
+      "image": "/images/binary hub/projects/pos1.png",
+      "summary": "A comprehensive Customer Relationship Management system."
     },
     {
       "id": "p2",
-      "title": "Creative Agency Website",
-      "image": "/images/project-agency.jpg",
-      "summary": "Complete branding, UI/UX design, and web development for a creative agency"
+      "title": "Gilgit Baltistan Museum",
+      "image": "/images/binary hub/projects/gilgitmuseum.png",
+      "summary": "Digital presence and interactive exhibits for the Gilgit Baltistan Museum."
     },
     {
       "id": "p3",
-      "title": "Healthcare Portal",
-      "image": "/images/project-health.jpg",
-      "summary": "Patient management system with appointment booking and telemedicine features"
+      "title": "AI Startup Web App",
+      "image": "/images/binary hub/projects/AI Startup Web App.png",
+      "summary": "Innovative web application for an AI-focused startup."
     },
     {
       "id": "p4",
-      "title": "Educational App",
-      "image": "/images/project-edu.jpg",
-      "summary": "Interactive learning platform with progress tracking and gamification"
+      "title": "Tourist Group Management System",
+      "image": "/images/binary hub/projects/Tourist Portal Management system.png",
+      "summary": "A robust system for managing tourist groups and itineraries."
+    },
+    {
+      "id": "p5",
+      "title": "Maqsood Ahmed & Sons Website",
+      "image": "/images/binary hub/projects/maqsoodahmed.png",
+      "summary": "Corporate and informational website for Maqsood Ahmed & Sons."
     }
   ],
   "testimonials": [

@@ -22,6 +22,7 @@ import MyCourses from "./pages/MyCourses";
 import NotFound from "./pages/NotFound";
 
 import ImpactDetail from "./pages/ImpactDetail";
+import BranchDetail from "./pages/BranchDetail";
 
 const queryClient = new QueryClient();
 
@@ -39,6 +40,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/binary-hub" element={<BinaryHub />} />
+          <Route path="/binary-hub/branches/:branchId" element={<BranchDetail />} />
           <Route path="/binary-hub/impact/:impactId" element={<ImpactDetail />} />
           <Route path="/binary-hub/team" element={<BinaryHubTeam />} />
           <Route path="/binary-hub/gallery" element={<BinaryHubGallery />} />
